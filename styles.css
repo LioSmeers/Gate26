@@ -433,16 +433,33 @@ p {
 }
 
 .footer {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr minmax(240px, 1.4fr) auto;
+  align-items: center;
   gap: 18px;
   padding: 28px clamp(18px, 5vw, 64px);
   color: #ffffff;
   background: #000000;
 }
 
+.footer-brand {
+  display: grid;
+  gap: 4px;
+}
+
 .footer span {
   font-weight: 800;
+}
+
+.footer small,
+.footer-note {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.footer-note {
+  margin: 0;
 }
 
 .footer a {
@@ -547,5 +564,9 @@ p {
   .button,
   .tab {
     width: 100%;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
   }
 }
