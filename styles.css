@@ -501,6 +501,32 @@ p {
   cursor: pointer;
 }
 
+.thanks-page {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: clamp(24px, 5vw, 64px);
+  color: #ffffff;
+  background: #111111;
+}
+
+.thanks-panel {
+  width: min(680px, 100%);
+}
+
+.thanks-panel h1 {
+  margin: 0;
+  font-size: clamp(3.5rem, 12vw, 8rem);
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.thanks-panel p:not(.eyebrow) {
+  margin: 22px 0 30px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.1rem;
+}
+
 @media (max-width: 980px) {
   .services-grid,
   .gallery-grid {

@@ -111,24 +111,4 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-document.querySelector(".contact-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const form = new FormData(event.currentTarget);
-  const name = form.get("naam") || "";
-  const contact = form.get("contact") || "";
-  const message = form.get("bericht") || "";
-  const recipient = "schepensjorn@hotmail.com";
-  const subject = "Afspraakaanvraag GATE26";
-  const body = [
-    `Naam: ${name}`,
-    `E-mail: ${contact}`,
-    "",
-    "Bericht:",
-    message
-  ].join("\n");
-
-  window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-});
-
 renderGallery("poetsbeurten");
