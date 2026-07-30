@@ -111,4 +111,39 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+const contactForm = document.querySelector(".contact-form");
+const contactStatus = document.querySelector(".form-status");
+
+contactForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  const originalText = submitButton.textContent;
+  submitButton.disabled = true;
+  submitButton.textContent = "Versturen...";
+  contactStatus.textContent = "";
+
+  try {
+    const response = await fetch(contactForm.action, {
+      method: "POST",
+      body: new FormData(contactForm),
+      headers: {
+        Accept: "application/json"
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error("Form submission failed");
+    }
+
+    contactForm.reset();
+    contactStatus.textContent = "Bedankt. Uw bericht is verstuurd.";
+  } catch (error) {
+    contactStatus.textContent = "Het bericht kon niet worden verstuurd. Probeer het later opnieuw.";
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = originalText;
+  }
+});
+
 renderGallery("poetsbeurten");

@@ -156,11 +156,10 @@
             Dan kan GATE26 gericht inschatten welke behandeling of herstelling nodig is.
           </p>
         </div>
-        <form class="contact-form" action="https://formsubmit.co/schepensjorn@hotmail.com" method="POST">
+        <form class="contact-form" action="https://formsubmit.co/ajax/schepensjorn@hotmail.com" method="POST">
           <input type="hidden" name="_subject" value="Afspraakaanvraag GATE26" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://gate26.be/bedankt.html" />
           <label>
             Naam
             <input type="text" name="naam" placeholder="Uw naam" />
@@ -174,7 +173,7 @@
             <textarea name="bericht" rows="5" placeholder="Onderhoud, poetsbeurt, banden, velgenschade, carrosserie..."></textarea>
           </label>
           <button class="button primary" type="submit">Versturen</button>
-          <p class="form-note">Dit formulier opent uw mailprogramma met het bericht. Voeg daarna gerust foto's toe.</p>
+          <p class="form-note form-status" role="status" aria-live="polite"></p>
         </form>
       </section>
     </main>
