@@ -118,16 +118,17 @@ document.querySelector(".contact-form").addEventListener("submit", (event) => {
   const name = form.get("naam") || "";
   const contact = form.get("contact") || "";
   const message = form.get("bericht") || "";
+  const recipient = "schepensjorn@hotmail.com";
   const subject = "Afspraakaanvraag GATE26";
   const body = [
     `Naam: ${name}`,
-    `Contact: ${contact}`,
+    `E-mail: ${contact}`,
     "",
     "Bericht:",
     message
   ].join("\n");
 
-  window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
 
 renderGallery("poetsbeurten");
